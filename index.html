@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Raaaan Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet"/>
+  <style>
+    body{font-family:'Inter',sans-serif;background:#0f172a;color:#fff}
+    .glass{background:rgba(30,41,59,.6);backdrop-filter:blur(25px)}
+    .btn-glass{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.05);backdrop-filter:blur(10px)}
+    .btn-glass:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.5)}
+    .btn-glass.selected{border-color:#60a5fa;background:rgba(96,165,250,.15)}
+    .tab-btn{border-radius:25px;padding:6px 18px;font-size:.875rem}
+    .tab-btn.active{background:#1e40af}
+  </style>
+</head>
+<body class="min-h-screen flex flex-col items-center gap-6 px-4 py-8">
+
+<div class="w-full max-w-md glass rounded-3xl p-6 shadow-xl border border-slate-700">
+  <div class="flex justify-center gap-2 mb-4">
+    <button class="tab-btn active" data-tab="premium">Aplikasi Premium</button>
+    <button class="tab-btn" data-tab="topup">Top Up</button>
+    <button class="tab-btn" data-tab="lain">Lainnya</button>
+  </div>
+
+  <div id="panel-premium">
+    <div id="appList" class="grid grid-cols-2 gap-2 max-h-[60vh] overflow-y-auto mb-4"></div>
+    <div id="pagination" class="flex flex-wrap justify-center gap-2"></div>
+    <p class="text-xs text-center text-gray-400 mt-4">Klik aplikasi → pilih paket → pilih pemabayaran → Order via wa  → tf  → proses </p>
+  </div>
+
+  <div id="panel-topup" class="hidden text-center text-gray-400">Data top-up belum tersedia.</div>
+  <div id="panel-lain"  class="hidden text-center text-gray-400">Konten lainnya menyusul.</div>
+</div>
+
+<div class="w-full max-w-md glass rounded-3xl p-6 shadow-xl border border-slate-700">
+  <h2 class="text-2xl font-semibold text-center mb-4">🔗 kontak atmin</h2>
+  <div class="flex gap-2">
+    <a href="https://chat.whatsapp.com/EP8hr6OSb3TECCE37p70oG" target="_blank"
+       class="w-1/2 bg-slate-700 hover:bg-slate-600 py-2 rounded-xl text-center text-sm border border-slate-600">Grup</a>
+    <a href="https://wa.me/6287768966445" target="_blank"
+       class="w-1/2 bg-slate-700 hover:bg-slate-600 py-2 rounded-xl text-center text-sm border border-slate-600">Admin</a>
+  </div>
+</div>
+
+<script>
+const premium=[{
+  key:"ai gemini",
+  response:`⋆ AI GEMINI
+♡ 1 Bulan Acc Sendiri : Rp 10 500
+♡ 1 Bulan Acc Admin   : Rp 15 500
+
+📣 INFO
+- Akun dari admin
+- Proses manual 1×24 jam`
+}], topup=[], lainnya=[];
+
+const perPage=30; let page=1, activeTab="premium";
+const clean=t=>t.replace(/[^\w\s\d.,:()/+-]/g,"").replace(/\s+/g," ").trim();
+const curData=()=>activeTab==="premium"?premium:activeTab==="topup"?topup:lainnya;
+
+const appList=document.getElementById("appList"), pagination=document.getElementById("pagination");
+
+function renderList(){
+  const data=curData(); appList.innerHTML="";
+  data.slice((page-1)*perPage,page*perPage).forEach(p=>{
+    const btn=document.createElement("button");
+    btn.textContent=p.key.toUpperCase();
+    btn.className="bg-slate-700 hover:bg-slate-600 py-2 px-3 rounded-xl text-sm border border-slate-600";
+    btn.onclick=()=>openPkgPopup(p); appList.appendChild(btn);
+  });
+  renderPagination(Math.max(1,Math.ceil(data.length/perPage)));
+}
+
+function renderPagination(total){ pagination.innerHTML="";
+  for(let i=1;i<=total;i++){
+    const b=document.createElement("button"); b.textContent=i;
+    b.className=`px-3 py-1 rounded-md text-sm border border-slate-600 ${i===page?'bg-blue-700':'bg-slate-700 hover:bg-slate-600'}`;
+    b.onclick=()=>{page=i; renderList()}; pagination.appendChild(b);
+  }
+}
+
+function openPkgPopup(prod){
+  const price=[], info=[]; let flag=false;
+  prod.response.split("\n").forEach(l=>{
+    if(l.includes("INFO")){flag=true; return;}
+    (!flag && l.includes("♡")) ? price.push(clean(l)) : flag && info.push(clean(l));
+  });
+  let chosen="";
+  const pop=document.createElement("div"); pop.className="fixed inset-0 z-50 flex items-center justify-center bg-black/40";
+  pop.innerHTML=`
+    <div class="glass p-6 rounded-2xl w-[90%] max-w-sm shadow-xl border border-slate-700 text-sm">
+      <h3 class="text-lg font-semibold mb-4 text-center">${prod.key.toUpperCase()}</h3>
+      <p class="font-medium mb-2">Pilih Paket:</p>
+      <div class="flex flex-col gap-2 mb-4">
+        ${price.map(p => `
+          <button class="btn-glass tab-btn w-full text-left" data-paket="${p}">${p}</button>
+        `).join("")}
+      </div>
+      <div class="mb-4 bg-slate-700/40 p-3 rounded-md">
+        <p class="font-medium mb-2">Info:</p>${info.map(i=>`<p>${i}</p>`).join("")}
+      </div>
+      <p id="alert1" class="text-xs text-red-400 text-center mb-2 hidden">Pilih paket dulu ya 😅</p>
+      <div class="flex gap-2">
+        <button id="nextBtn" disabled class="flex-1 bg-gray-500 cursor-not-allowed py-2 rounded-[25px] text-white font-semibold">Order</button>
+        <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-slate-700 hover:bg-slate-600 py-2 rounded-[25px] text-sm border border-slate-600">Kembali</button>
+      </div>
+    </div>`; document.body.appendChild(pop);
+
+  const opts=pop.querySelectorAll("[data-paket]"), next=pop.querySelector("#nextBtn"), alert1=pop.querySelector("#alert1");
+  opts.forEach(o=>o.onclick=()=>{opts.forEach(b=>b.classList.remove("selected")); o.classList.add("selected"); chosen=o.dataset.paket;
+    next.disabled=false; next.classList.replace("bg-gray-500","bg-blue-600"); next.classList.add("hover:bg-blue-700"); alert1.classList.add("hidden");});
+  next.onclick=()=>{ if(!chosen){alert1.classList.remove("hidden"); return;} pop.remove(); openPayPopup(prod.key,chosen); };
+}
+
+function openPayPopup(name,pkg){
+  const total=pkg.split(":").pop().trim();
+  const pay=document.createElement("div"); pay.className="fixed inset-0 z-50 flex items-center justify-center bg-black/40";
+  pay.innerHTML=`
+    <div class="glass p-6 rounded-2xl w-[90%] max-w-sm shadow-xl border border-slate-700 text-sm relative">
+      <span id="timer" class="absolute right-4 top-4 text-xs font-semibold"></span>
+      <h3 class="text-lg font-semibold mb-3 text-center">Metode Pembayaran</h3>
+      <p class="mb-2 text-center">Total: <span class="font-semibold">${total}</span></p>
+
+      <div class="flex flex-col gap-2 mb-4">
+        <button class="btn-glass tab-btn w-full flex justify-between" data-pay="DANA"><span>DANA</span><span></span></button>
+        <button class="btn-glass tab-btn w-full flex justify-between" data-pay="GoPay"><span>GoPay</span><span></span></button>
+      </div>
+
+      <p id="alert2" class="text-xs text-red-400 text-center mb-2 hidden">Pilih metode pembayaran dulu 😅</p>
+
+      <div class="flex gap-2 mb-4">
+        <button id="sendBtn" disabled class="flex-1 bg-gray-500 cursor-not-allowed py-2 rounded-[25px] text-white font-semibold">Kirim via WhatsApp</button>
+        <button onclick="this.closest('.fixed').remove()" class="flex-1 bg-slate-700 hover:bg-slate-600 py-2 rounded-[25px] text-sm border border-slate-600">Kembali</button>
+      </div>
+
+      <div class="bg-slate-700/40 p-3 rounded-md text-sm text-gray-300 border border-slate-600">
+        <p class="font-semibold text-white mb-2">Cara Pembayaran:</p>
+        <ol class="list-decimal list-inside leading-relaxed space-y-1">
+          <li>Pilih metode & salin nomor.</li>
+          <li>Buka e-wallet ➜ Transfer.</li>
+          <li>Tempel nomor <strong>081279317660</strong>.</li>
+          <li>Masukkan nominal <strong>${total}</strong> ➜ Kirim.</li>
+          <li>Kirim bukti ke admin.</li>
+        </ol>
+      </div>
+
+      <p class="text-xs text-center text-gray-400 mt-3 mb-1">Butuh bantuan?</p>
+      <div class="flex gap-2">
+        <a href="https://chat.whatsapp.com/EP8hr6OSb3TECCE37p70oG" target="_blank"
+           class="flex-1 bg-slate-700 hover:bg-slate-600 py-2 rounded-[25px] text-center text-xs border border-slate-600">Join GC</a>
+        <a href="https://wa.me/6287768966445" target="_blank"
+           class="flex-1 bg-slate-700 hover:bg-slate-600 py-2 rounded-[25px] text-center text-xs border border-slate-600">Chat Admin</a>
+      </div>
+    </div>`; document.body.appendChild(pay);
+
+  const timer=pay.querySelector("#timer"); let s=600;
+  const tick=()=>{ const m=String(Math.floor(s/60)).padStart(2,"0"), d=String(s%60).padStart(2,"0"); timer.textContent=`00:${m}:${d}`; };
+  tick(); const iv=setInterval(()=>{ if(--s<=0){clearInterval(iv); pay.remove();} tick(); },1000);
+
+  let payOpt="";
+  const methods=pay.querySelectorAll("[data-pay]");
+  const sendBtn=pay.querySelector("#sendBtn"), alert2=pay.querySelector("#alert2");
+
+  methods.forEach(btn=>btn.onclick=()=>{
+    methods.forEach(x=>{x.classList.remove("selected"); x.children[1].textContent="";});
+    btn.classList.add("selected"); payOpt=btn.dataset.pay; btn.children[1].textContent="081279317660";
+    try{navigator.clipboard.writeText("081279317660");}catch{prompt("Salin nomor:", "081279317660");}
+    sendBtn.disabled=false; sendBtn.classList.replace("bg-gray-500","bg-blue-600"); sendBtn.classList.add("hover:bg-blue-700"); alert2.classList.add("hidden");
+  });
+
+  sendBtn.onclick=()=>{
+    if(!payOpt){alert2.classList.remove("hidden"); return;}
+    const msg=encodeURIComponent(`Bang saya mau beli ${name.toUpperCase()} - ${pkg} | Metode: ${payOpt}`);
+    window.open(`https://wa.me/6287768966445?text=${msg}`,"_blank");
+    clearInterval(iv); pay.remove();
+  };
+}
+
+document.querySelectorAll("[data-tab]").forEach(btn=>btn.onclick=()=>{
+  document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active"); activeTab=btn.dataset.tab; page=1;
+  ["premium","topup","lain"].forEach(id=>document.getElementById(`panel-${id}`).classList.toggle("hidden",id!==activeTab));
+  renderList();
+});
+
+renderList();
+</script>
+</body>
+</html>
