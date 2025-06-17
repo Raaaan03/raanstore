@@ -46,16 +46,305 @@
 </div>
 
 <script>
-const premium=[{
-  key:"ai gemini",
-  response:`⋆ AI GEMINI
-♡ 1 Bulan Acc Sendiri : Rp 10 500
-♡ 1 Bulan Acc Admin   : Rp 15 500
-
-📣 INFO
-- Akun dari admin
-- Proses manual 1×24 jam`
-}], topup=[], lainnya=[];
+const premium=[
+     {
+          "id": "120363400344748228@g.us",
+          "key": "ai gemini",
+          "response": "\n-ˋˏ  \n⋆𓈒𓏸ྀི *AI GEMINI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Acc Sendiri : Rp 10.500*\n𓍯𓂃𓏧♡ *1 Bulan Acc Atmin : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "youtube",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *YOUTUBE*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Fam : Rp 5.500*\n𓍯𓂃𓏧♡ *2 Bulan Fam : Rp 6.500*\n𓍯𓂃𓏧♡ *3 Bulan Fam : Rp 8.500*\n𓍯𓂃𓏧♡ *1 Bulan Indp : Rp 8.500*\n𓍯𓂃𓏧♡ *3 Bulan Indp ( Akun Dari Atmin No Renew) : Rp 23.500*\n𓍯𓂃𓏧♡ *3 Bulan Mixplan : Rp 15.500*\n𓍯𓂃𓏧♡ *1 Bulan Famhead : Rp 25.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Indp/private = 1 akun user hanya kamu\n- Mix plan = perpaduan antara indp & fam sistem nya kaya invit tapi sung 3 bulan\n- Family head bisa invit max 5 user invite\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "youku",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *YOUKU*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 8.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 14.500*\n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 25.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "wink",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *WINK*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 19.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 45.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Only os\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "wibuku",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *WIBUKU*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 7.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 10.500*\n𓍯𓂃𓏧♡ *6 Bulan Sharing : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "wetv",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *WETV*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 8.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "wattpad",
+          "response": "\n-ˋˏ   ⋆𓈒𓏸ྀི *WATTPAD*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "vsco",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *VSCO*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "vpn",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *VPN*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Private - Vpn Hma : Rp 10.500*\n𓍯𓂃𓏧♡ *1 Bulan Private - Vpn Express : Rp 10.500*\n𓍯𓂃𓏧♡ *1 Bulan Private - Vpn Surfsgark : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "viu",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *VIU*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 3.500*\n𓍯𓂃𓏧♡ *3 Bulan Private : Rp 6.500*\n𓍯𓂃𓏧♡ *1 Tahun Private : Rp 15.500*\n𓍯𓂃𓏧♡ *1 Bulan Sharing Viu + : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "vision",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *VISION*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *Vision + Pay Tv : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "vidio",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *VIDIO*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 17.500*\n𓍯𓂃𓏧♡ *1 Bulan All Dev Private : Rp 26.500*\n𓍯𓂃𓏧♡ *1 Minggu Sharing (ksg) : Rp 12.500*\n𓍯𓂃𓏧♡ *1 Bulan Diamond Private (ksg) : Rp 60.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "turnitin",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *TURNITIN*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan : Rp 8.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "spotify",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *SPOTIFY*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Fam : Rp 17.500*\n𓍯𓂃𓏧♡ *2 Bulan Fam : Rp 30.500*\n𓍯𓂃𓏧♡ *1 Bulan Indp : Rp 25.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "scribd",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *SCRIBD*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 6.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 12.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "remini",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *REMINI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Web : Rp 66.500*\n𓍯𓂃𓏧♡ *1 Bulan App : Rp 16.500*\n𓍯𓂃𓏧♡ *1 Tahun Lite : Rp 24.500*\n𓍯𓂃𓏧♡ *1 Tahun Pro Apk Android : Rp 16.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 15.500*\n𓍯𓂃𓏧♡ *1 Tahun Private : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Private acc seller +1k\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "rcti",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *RCTI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "piscart",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *PISCART*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 6.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 11.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "meitu",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *MEITU*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 17.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 41.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "mango tv",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *MANGO TV*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "loklok",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *LOKLOK*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 8.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 13.500*\n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 20.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "lightroom",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *LIGHTROOM*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 11.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "iqiyi",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *IQIYI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 7.500*\n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 11.500*\n𓍯𓂃𓏧♡ *1 Bulan Private Standart : Rp 31.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "inshot",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *INSHOT*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *Life Time Android : Rp 8.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "ibis paint",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *IBIS PAINT*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tahun Sharing Anroid : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "hbo",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *HBO*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 13.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "gemini pro",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *GEMINI PRO*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *15 Bulan Gemini Pro : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Benefit:\n- Akses veo 3\n- 2 tb gdrive\n- Yt premium 1 bulan\n- Spreadsheet analysis\n- Deep research\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "gdrive",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *GDRIVE*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tb Storage Garansi 1 Bulan : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "gagaolala",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *GAGAOLALA*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "duolingo",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DUOLINGO*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 15.500*\n𓍯𓂃𓏧♡ *2 Minggu Private : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Indp/private = 1 akun user hanya kamu\n- Akun dari admin\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "dramabox",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DRAMABOX*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 13.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 28.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "drakor",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DRAKOR*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 11.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "disney",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DISNEY*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Hari : Rp 3.500*\n𓍯𓂃𓏧♡ *3 Hari : Rp 7.500*\n𓍯𓂃𓏧♡ *7 Hari : Rp 11.500*\n𓍯𓂃𓏧♡ *1 Bulan 2 User : Rp 50.500*\n𓍯𓂃𓏧♡ *1 Bulan 4 User : Rp 35.500*\n𓍯𓂃𓏧♡ *1 Bulan 6 User : Rp 25.500*\n𓍯𓂃𓏧♡ *1 Bulan 10 User : Rp 20.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "dazzscam",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DAZZSCAM*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *Ios Life Time : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun verif\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "deepl",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *DEEPL*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Member : Rp 8.500*\n𓍯𓂃𓏧♡ *1 Bulan Head : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "canva",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *CANVA*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Member : Rp 1.500*\n𓍯𓂃𓏧♡ *1 Tahun Member : Rp 5.500*\n𓍯𓂃𓏧♡ *1 Bulanadmin ( In Max30 Meme) : Rp 6.500*\n𓍯𓂃𓏧♡ *30 Days Owner : Rp 15.500*\n𓍯𓂃𓏧♡ *45 Days Owner : Rp 20.500*\n𓍯𓂃𓏧♡ *365 Daysowner : Rp 120.500*\n𓍯𓂃𓏧♡ *12 Bulan Education Lifetime Garansi 12 : Rp 10.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Email dari buyer\n- Canva admin invite 100+ member\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "camscanner",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *CAMSCANNER*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Tahun Sharing : Rp 12.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "bstation",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *BSTATION*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 8.500*\n𓍯𓂃𓏧♡ *3 Bulan Sharing : Rp 18.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 25.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Akun sharing max login 1 device ( lu order ya 1 device aja ga usah login di device lain)\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "chat gpt ai",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *CHAT GPT AI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Invit : Rp 15.500*\n𓍯𓂃𓏧♡ *1 Bulan Head : Rp 55.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 150.500*\n𓍯𓂃𓏧♡ *1 Bulan Sharing : Rp 30.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Head bisa invit 4 member\n- Indp/private = 1 akun user hanya kamu\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "blackbox ai",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *BLACKBOX AI*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *3 Bulan Private : Rp 27.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Garansi 1 bulan\n- Akun dari admin\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "amazon",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *AMAZON*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *1 Bulan Sharing 5u : Rp 8.500*\n𓍯𓂃𓏧♡ *1 Bulan Sharing 4 U : Rp 10.500*\n𓍯𓂃𓏧♡ *1 Bulan Private : Rp 15.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari admin\n- Fam/sharing = 1 akun usernya banyak/ lebih dari 1\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     },
+     {
+          "id": "120363400344748228@g.us",
+          "key": "alight motion",
+          "response": "\n-ˋˏ  ⋆𓈒𓏸ྀི *ALIGHT MOTION*.ೃ࿔*:･ \n𓍯𓂃𓏧♡ *365 < Days Private : Rp 3.500*\n\n⊹ ࣪ ﹏𓊝﹏𓂁﹏⊹ ࣪ ˖\n`📣 INFO`\n- Akun dari buyer (harus akun yg g pernah prem am )\n- Indp/private = 1 akun user hanya kamu\n- Proses manual, harap sabar. 1x24 jam\n- *Order here* ➷ \n *wa.me/6287768966445*\n꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦︶꒷꒦︶꒦꒷꒦︶꒷꒦꒷꒦",
+          "isImage": false,
+          "image_url": "-"
+     }
+]
+      
+      
+      , topup=[], lainnya=[];
 
 const perPage=30; let page=1, activeTab="premium";
 const clean=t=>t.replace(/[^\w\s\d.,:()/+-]/g,"").replace(/\s+/g," ").trim();
